@@ -9,6 +9,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const modules = [
   MatToolbarModule,
@@ -17,7 +18,8 @@ const modules = [
   MatCheckboxModule,
   ReactiveFormsModule,
   FormsModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatPaginatorModule
 ]
 
 const components = [
@@ -26,7 +28,7 @@ const components = [
 ]
 @NgModule({
   declarations: [
-    ...components
+    ...components,
   ],
   imports: [
     CommonModule,

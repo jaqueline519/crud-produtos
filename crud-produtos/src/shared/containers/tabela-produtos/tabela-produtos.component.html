@@ -1,31 +1,38 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row> <h1>Produtos disponíveis</h1></mat-toolbar-row>
+</mat-toolbar>
 
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <h1>Produtos disponíveis</h1></mat-toolbar-row>
-  </mat-toolbar>
-<table
- mat-table [dataSource]="produtosDaTabela" class="mat-elevation-z8"
- >
+<table mat-table [dataSource]="produtosDaTabela" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> <strong>Id</strong> </th>
-    <td mat-cell *matCellDef="let produto"> {{produto.id}} </td>
+    <th mat-header-cell *matHeaderCellDef><strong>Id</strong></th>
+    <td mat-cell *matCellDef="let produto">{{ produto.id }}</td>
   </ng-container>
 
   <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> <strong > Title </strong></th>
-    <td mat-cell *matCellDef="let produto"> {{produto.title}} </td>
+    <th mat-header-cell *matHeaderCellDef><strong> Title </strong></th>
+    <td mat-cell *matCellDef="let produto">{{ produto.title }}</td>
   </ng-container>
 
   <ng-container matColumnDef="brand">
-    <th mat-header-cell *matHeaderCellDef> <strong>Brand</strong>  </th>
-    <td mat-cell *matCellDef="let produto"> {{produto.brand}} </td>
+    <th mat-header-cell *matHeaderCellDef><strong>Brand</strong></th>
+    <td mat-cell *matCellDef="let produto">{{ produto.brand }}</td>
   </ng-container>
 
   <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef> <strong> Price</strong> </th>
-    <td mat-cell *matCellDef="let produto"> {{produto.price}} </td>
+    <th mat-header-cell *matHeaderCellDef><strong> Price</strong></th>
+    <td mat-cell *matCellDef="let produto">{{ produto.price }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<mat-paginator
+  class="paginator-text"
+  [length]="total"
+  [pageSize]="limiteDeProdutosPagina"
+  [showFirstLastButtons]="true"
+  [hidePageSize]="true"
+  (page)="handlePageEvent($event)"
+>
+</mat-paginator>

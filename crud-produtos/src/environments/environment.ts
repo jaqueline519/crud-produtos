@@ -1,3 +1,4 @@
 export const environment = {
-  getProdutos: 'https://dummyjson.com/products'
+  buscarProdutos: 'https://dummyjson.com/products',
+  procurarProdutos:  'https://dummyjson.com/products?'
 }

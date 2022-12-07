@@ -14,7 +14,15 @@ export class ProdutosService {
   constructor(private httpClient: HttpClient) { }
 
   buscarProdutos(): Observable<any> {
-    return this.httpClient.get<any>(environment.getProdutos)
+    return this.httpClient.get<any>(environment.buscarProdutos)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
+  buscarPorPagina(limit, skip): Observable<any> {
+    let url = `${environment.procurarProdutos}limit=${limit}&skip=${skip}`
+    return this.httpClient.get<any>(url)
       .pipe(
         retry(2),
         catchError(this.handleError))
