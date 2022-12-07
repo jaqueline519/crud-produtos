@@ -11,7 +11,8 @@ import { ProdutosService } from '../../service/produtos.service';
 export class TabelaProdutosComponent implements OnInit {
 
   constructor(private produtosService: ProdutosService) { }
-  elementosDaTabela: [];
+  produtosDaTabela: [];
+  displayedColumns: string[] = ['id', 'title', 'brand', 'price'];
 
   ngOnInit(): void {
     this.listarProdutos()
@@ -19,7 +20,7 @@ export class TabelaProdutosComponent implements OnInit {
 
   listarProdutos() {
     this.produtosService.buscarProdutos().subscribe((retorno => {
-      this.elementosDaTabela = retorno
+      this.produtosDaTabela = retorno.products
     }));
   }
 }

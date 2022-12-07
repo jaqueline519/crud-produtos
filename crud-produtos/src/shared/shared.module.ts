@@ -3,15 +3,26 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TabelaProdutosComponent } from './containers/tabela-produtos/tabela-produtos.component';
 import { HeaderComponent } from './components/header/header.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const modules = [
-  MatToolbarModule
+  MatToolbarModule,
+  MatTableModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  ReactiveFormsModule,
+  FormsModule,
+  MatFormFieldModule
 ]
 
 const components = [
     TabelaProdutosComponent,
-    HeaderComponent
+    HeaderComponent,
 ]
 @NgModule({
   declarations: [
