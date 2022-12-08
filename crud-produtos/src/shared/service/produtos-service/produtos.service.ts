@@ -43,7 +43,7 @@ export class ProdutosService {
 
   cadastrarNovoProduto(novoProduto: Product): Observable<any>{
     return this.httpClient.post<any>(
-      environment.cadastrarNovoProduto, JSON.stringify({title: novoProduto.title}), this.httpHeader)
+      environment.cadastrarNovoProduto, JSON.stringify({title: novoProduto}), this.httpHeader)
       .pipe(
         retry(2),
         catchError(this.handleError))

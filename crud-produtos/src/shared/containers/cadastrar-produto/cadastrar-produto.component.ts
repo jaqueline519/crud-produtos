@@ -31,18 +31,16 @@ export class CadastrarProdutoComponent implements OnInit {
       valor: ['', Validators.required],
       porcentagemDesconto: [''],
       avaliacao: [''],
-      estoque: ['', Validators.required],
+      estoque: [''],
       marca: ['', Validators.required],
-      categoria: [''],
-      miniatura: [''],
-      imagens: [['']]
+      categoria: ['']
     })
   }
 
   salvar(){
-    this.produtosService.cadastrarNovoProduto(this.form.value).subscribe(retorno => {
+    this.produtosService.cadastrarNovoProduto(this.form.value.title).subscribe(produto => {
       this.form.reset();
-      this.snackbar.openSnackBarSuccess(retorno.title, 'created')
+      this.snackbar.openSnackBarSuccess(produto.title, 'created')
 
     });
   }

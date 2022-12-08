@@ -1,70 +1,81 @@
-<app-subtitle-toolbar [subtitulo]="'new product'"></app-subtitle-toolbar>
 
-<form class="mat-elevation-z10 form" [formGroup]="form" (ngSubmit)="salvar()">
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Title</mat-label>
-      <input formControlName="title" matInput required />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Description</mat-label>
-      <input formControlName="descricao" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Price</mat-label>
-      <input formControlName="valor" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Discount percentage</mat-label>
-      <input formControlName="porcentagemDesconto" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Rating</mat-label>
-      <input formControlName="avaliacao" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Stock</mat-label>
-      <input formControlName="estoque" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Brand</mat-label>
-      <input formControlName="marca" matInput />
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill" color="accent">
-    <ng-content></ng-content>
-    <div>
-      <mat-label>Category</mat-label>
-      <input formControlName="categoria" matInput />
-    </div>
-  </mat-form-field>
-</form>
+<app-subtitle-toolbar
+class="subtitulo-cadastro">
+</app-subtitle-toolbar>
 
-<button
-  [disabled]="!form.valid"
- (click)="salvar()"
- mat-raised-button
- color="primary"
- class="mat-elevation-z10"
- >
-  Save
-</button>
+<div class="form-container">
+  <form class="mat-elevation-z10 form" [formGroup]="form" (ngSubmit)="salvar()">
+  <div class="div-form">
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput required />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Description</mat-label>
+        <input formControlName="descricao" matInput />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Price</mat-label>
+        <input formControlName="valor" matInput />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Discount percentage</mat-label>
+        <input formControlName="porcentagemDesconto" matInput />
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="div-form">
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Rating</mat-label>
+        <input formControlName="avaliacao" matInput />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Stock</mat-label>
+        <input formControlName="estoque" matInput />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Brand</mat-label>
+        <input formControlName="marca" matInput />
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <ng-content></ng-content>
+      <div>
+        <mat-label>Category</mat-label>
+        <input formControlName="categoria" matInput />
+      </div>
+    </mat-form-field>
+  </div>
+  </form>
+
+  <button
+    [disabled]="!form.valid"
+   (click)="salvar()"
+   mat-raised-button
+   color="primary"
+   class="mat-elevation-z10"
+   >
+    Save
+  </button>
+</div>
+

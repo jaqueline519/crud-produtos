@@ -10,22 +10,22 @@ import { filter } from 'rxjs/operators';
 })
 export class SubtitleToolbarComponent{
 
-  @Input() subtitulo;
-  mostrarIconeAdicionar = false;
+  subtitulo;
+  icone;
+
   constructor(private router: Router){
-      router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(
-        (event: NavigationEnd | any) => {
-          if(event.url.includes('lista-produtos')){
-            this.mostrarIconeAdicionar = true
-          } else if (event.url.includes('cadastrar-produtos')){
-            this.mostrarIconeAdicionar = false
-          }
+    router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(
+      (event: NavigationEnd | any) => {
+        if(event.url.includes('lista-produtos')){
+          this.subtitulo = 'Available Stock'
+          this.icone = 'list_alt'
+        } else if (event.url.includes('cadastrar-produtos')){
+          this.subtitulo = 'New Product'
+          this.icone = 'assignment'
         }
-      )
+      }
+    )
 
-    }
 
-  redirecionarParaTelaCadastro(){
-    this.router.navigate(['cadastrar-produtos'])
-  }
+}
 }

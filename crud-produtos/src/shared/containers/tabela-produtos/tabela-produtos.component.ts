@@ -16,7 +16,7 @@ export class TabelaProdutosComponent implements OnInit {
   limiteDeProdutosPagina;
   skip;
   total;
-  displayedColumns: string[] = ['id', 'title', 'brand', 'price'];
+  displayedColumns: string[] = ['id', 'title', 'brand', 'price', 'edit'];
   tituloAtual;
 
   constructor(

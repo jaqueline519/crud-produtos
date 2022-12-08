@@ -19,6 +19,7 @@ import { CadastrarProdutoComponent } from './containers/cadastrar-produto/cadast
 import {MatCardModule} from '@angular/material/card';
 import { SubtitleToolbarComponent } from './components/subtitle-toolbar/subtitle-toolbar.component';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 const modules = [
   MatToolbarModule,
@@ -34,7 +35,8 @@ const modules = [
   MatDialogModule,
   MatButtonModule,
   MatSnackBarModule,
-  MatCardModule
+  MatCardModule,
+  RouterModule
 ]
 
 const components = [

@@ -16,7 +16,6 @@ export class SnackbarService {
 
   openSnackBarSuccess(valueSnackBar, tipoDeAcao) {
     this._snackBar.open(`successfully ${tipoDeAcao}: ${valueSnackBar}`, 'ok', {
-      panelClass: ['color-snackbar'],
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });
