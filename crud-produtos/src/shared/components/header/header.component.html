@@ -1,3 +1,9 @@
   <mat-toolbar class="mat-elevation-z6" color="primary">
-    <span>Loja Virtual Digi </span>
+    <span>{{title}}</span>
+    <span class="spacer"></span>
+    <button
+    (click)="redirecionarParaHome()"
+    mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
   </mat-toolbar>

@@ -13,8 +13,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CadastrarProdutoComponent } from './containers/cadastrar-produto/cadastrar-produto.component';
+import {MatCardModule} from '@angular/material/card';
+import { SubtitleToolbarComponent } from './components/subtitle-toolbar/subtitle-toolbar.component';
+import { MatInputModule } from '@angular/material/input';
 
 const modules = [
   MatToolbarModule,
@@ -28,13 +32,17 @@ const modules = [
   MatPaginatorModule,
   MatIconModule,
   MatDialogModule,
-  MatButtonModule
+  MatButtonModule,
+  MatSnackBarModule,
+  MatCardModule
 ]
 
 const components = [
     TabelaProdutosComponent,
     HeaderComponent,
     DialogComponent,
+    CadastrarProdutoComponent,
+    SubtitleToolbarComponent,
 ]
 @NgModule({
   declarations: [

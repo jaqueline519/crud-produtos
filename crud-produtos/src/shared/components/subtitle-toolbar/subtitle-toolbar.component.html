@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="justify-content: space-between">
+    <h1 class="subititulo">{{subtitulo}}</h1>
+    <button
+    *ngIf="mostrarIconeAdicionar"
+    (click)="redirecionarParaTelaCadastro()"
+    mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

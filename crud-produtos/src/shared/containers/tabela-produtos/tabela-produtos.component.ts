@@ -4,6 +4,7 @@ import { Product } from '../../models/model-lista-produtos.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from 'src/shared/components/dialog/dialog.component';
 import { EventosService } from 'src/shared/service/eventos-service/eventos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabela-produtos',
@@ -48,11 +49,11 @@ export class TabelaProdutosComponent implements OnInit {
   }
 
   abrirDialog(event, titulo, id) {
-    console.log("event dialog",event)
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = event
     this.dialog.open(DialogComponent, dialogConfig);
     this.emissorDeEventos.emissorEvento.emit(titulo)
     this.emissorDeEventos.emissorEventoId.emit(id)
   }
+
 }

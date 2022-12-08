@@ -1,11 +1,11 @@
 <h1 mat-dialog-title>edit product title</h1>
 <div mat-dialog-content>
-    <mat-form-field appearance="fill" [formGroup]="form" (ngSubmit)="editTituloProdutoIndex()">
+    <mat-form-field appearance="fill" [formGroup]="form" (ngSubmit)="editarTituloProdutoIndex()">
       <mat-label>new title</mat-label>
       <input matInput formControlName="titulo">
     </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button color="primary" (click)="cancelar()">cancel</button>
-  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="editTituloProdutoIndex()" cdkFocusInitial>to save</button>
+  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="editarTituloProdutoIndex()" cdkFocusInitial>to save</button>
 </div>

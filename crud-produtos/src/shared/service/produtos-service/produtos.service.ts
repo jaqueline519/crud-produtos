@@ -1,8 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { Products } from '../../models/model-lista-produtos.model';
+import { Product, Products } from '../../models/model-lista-produtos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,9 @@ export class ProdutosService {
 
   errorMessage: string = '';
   produtos: Products[] = [];
+  httpHeader = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
 
   constructor(private httpClient: HttpClient) { }
 
@@ -32,11 +35,18 @@ export class ProdutosService {
   editarTituloProdutoAtual(titulo, id): Observable<any>{
     const url = `${environment.editarProduto}${id}`
     return this.httpClient.patch<any>(
-      url, JSON.stringify(titulo))
+      url, JSON.stringify({title: titulo}), this.httpHeader)
       .pipe(
         retry(1),
-        catchError(this.handleError)
-      )
+        catchError(this.handleError))
+  }
+
+  cadastrarNovoProduto(novoProduto: Product): Observable<any>{
+    return this.httpClient.post<any>(
+      environment.cadastrarNovoProduto, JSON.stringify({title: novoProduto.title}), this.httpHeader)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
   }
 
   handleError(error: HttpErrorResponse) {
