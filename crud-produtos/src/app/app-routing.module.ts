@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabelaProdutosComponent } from '../shared/containers/tabela-produtos/tabela-produtos.component';
+import { CadastrarProdutoComponent } from '../shared/containers/cadastrar-produto/cadastrar-produto.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,10 @@ const routes: Routes = [
       {
         path: 'lista-produtos',
         component: TabelaProdutosComponent
+      },
+      {
+        path: 'cadastrar-produtos',
+        component: CadastrarProdutoComponent
       },
       {
         path: '**',
