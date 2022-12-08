@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProdutosService } from '../../service/produtos-service/produtos.service';
-import { SnackbarService } from '../../snackbar-service/snackbar.service';
+import { SnackbarService } from '../../service/snackbar-service/snackbar.service';
 import { Product } from '../../models/model-lista-produtos.model';
 
 @Component({
@@ -40,7 +40,7 @@ export class CadastrarProdutoComponent implements OnInit {
   salvar(){
     this.produtosService.cadastrarNovoProduto(this.form.value.title).subscribe(produto => {
       this.form.reset();
-      this.snackbar.openSnackBarSuccess(produto.title, 'created')
+      this.snackbar.abrirSnackBar(produto.title, 'created')
 
     });
   }

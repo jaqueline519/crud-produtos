@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EventosService } from '../../service/eventos-service/eventos.service';
 import { ProdutosService } from '../../service/produtos-service/produtos.service';
-import { SnackbarService } from '../../snackbar-service/snackbar.service';
+import { SnackbarService } from '../../service/snackbar-service/snackbar.service';
 
 @Component({
   selector: 'app-dialog',
@@ -64,7 +64,7 @@ export class DialogComponent{
     this.produtosService.editarTituloProdutoAtual(this.form.value.titulo, this.idProdutoAtual)
      .subscribe( itemEditado => {
         console.log("ITEM EDITADO", itemEditado)
-          this.snackBar.openSnackBarSuccess(itemEditado.title, 'edited')
+          this.snackBar.abrirSnackBar(itemEditado.title, 'edited')
           this.dialogRef.close();
    })
  }
