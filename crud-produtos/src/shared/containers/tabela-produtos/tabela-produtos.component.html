@@ -1,5 +1,7 @@
+
+
 <mat-toolbar color="primary">
-  <mat-toolbar-row> <h1>Produtos disponíveis</h1></mat-toolbar-row>
+  <mat-toolbar-row> <h1 class="subititulo">Produtos disponíveis</h1></mat-toolbar-row>
 </mat-toolbar>
 
 <table mat-table [dataSource]="produtosDaTabela" class="mat-elevation-z8">
@@ -10,7 +12,12 @@
 
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef><strong> Title </strong></th>
-    <td mat-cell *matCellDef="let produto">{{ produto.title }}</td>
+      <td mat-cell *matCellDef="let produto">
+        <mat-icon class="icone-editar" fontIcon="mode_edit"
+        (click)="abrirDialog($event, produto.title, produto.id)"
+        ></mat-icon>
+        {{ produto.title }}
+      </td>
   </ng-container>
 
   <ng-container matColumnDef="brand">
@@ -33,6 +40,6 @@
   [pageSize]="limiteDeProdutosPagina"
   [showFirstLastButtons]="true"
   [hidePageSize]="true"
-  (page)="handlePageEvent($event)"
+  (page)="capturaEventoPaginacao($event)"
 >
 </mat-paginator>

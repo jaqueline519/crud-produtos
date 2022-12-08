@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { Products } from '../models/model-lista-produtos.model';
+import { environment } from '../../../environments/environment';
+import { Products } from '../../models/model-lista-produtos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class ProdutosService {
 
   errorMessage: string = '';
   produtos: Products[] = [];
+
   constructor(private httpClient: HttpClient) { }
 
   buscarProdutos(): Observable<any> {
@@ -26,6 +27,16 @@ export class ProdutosService {
       .pipe(
         retry(2),
         catchError(this.handleError))
+  }
+
+  editarTituloProdutoAtual(titulo, id): Observable<any>{
+    const url = `${environment.editarProduto}${id}`
+    return this.httpClient.patch<any>(
+      url, JSON.stringify(titulo))
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
   }
 
   handleError(error: HttpErrorResponse) {

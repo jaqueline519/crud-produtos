@@ -10,6 +10,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatIconModule} from '@angular/material/icon';
+import { DialogComponent } from './components/dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 const modules = [
   MatToolbarModule,
@@ -19,12 +24,17 @@ const modules = [
   ReactiveFormsModule,
   FormsModule,
   MatFormFieldModule,
-  MatPaginatorModule
+  MatInputModule,
+  MatPaginatorModule,
+  MatIconModule,
+  MatDialogModule,
+  MatButtonModule
 ]
 
 const components = [
     TabelaProdutosComponent,
     HeaderComponent,
+    DialogComponent,
 ]
 @NgModule({
   declarations: [
