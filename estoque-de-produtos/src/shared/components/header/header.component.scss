@@ -1,0 +1,42 @@
+.logo-conteiner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+:host .mat-elevation-z6 ::ng-deep {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.rigth{
+  display: flex;
+}
+
+.titulo{
+  margin-right: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-link {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.nome-pagina {
+  font-size: 16px;
+  margin-left: -5px;
+  margin-top: 5px;
+}
+
+.mat-icon{
+  margin-right: 15px;
+}
