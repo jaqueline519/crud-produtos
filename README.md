@@ -12,7 +12,7 @@ Clone o repositório a partir do link `https://github.com/jaqueline519/crud-prod
 
 Instalando as dependências:
 
-> Abra o projeto no terminal na pasta raiz `crud-produtos` e digite o comando
+> Abra o projeto no terminal na pasta raiz `estoque-de-produtos` e digite o comando
 
 ```
 npm install
