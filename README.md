@@ -1,5 +1,5 @@
 
-                                                              Crud de Produtos utilizando Framework Angular
+                                                          Crud de Produtos utilizando Framework Angular
 
 > Para o desenvolvimento deste projeto foi utilizado a versão `15.0.2` do  `angular cli`, versão `4.8.2` do `typescrit`
 
